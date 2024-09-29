@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import logoImage from "@/images/yuzu.png";
 import Image from "astro/components/Image.astro";
 import "@/styles/globals.css";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/noto-sans-jp";
 ---
 
 <html lang="jp">
@@ -34,7 +36,8 @@ import "@/styles/globals.css";
 					"md:h-[calc(100vh-200px)]",
 				]}
 			>
-				<h2>キャッチコピー</h2>
+				<h2 class:list="font-inter">catch copy</h2>
+				<h2 class:list="font-jp">キャッチコピー</h2>
 			</section>
 			<div
 				class:list={[

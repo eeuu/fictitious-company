@@ -1,3 +1,5 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	darkMode: ['class'],
@@ -9,7 +11,11 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
-			colors: {}
+			colors: {},
+			fontFamily: {
+				inter: ['Inter Variable', ...defaultTheme.fontFamily.sans],
+				jp: ['Noto Sans JP Variable', ...defaultTheme.fontFamily.sans],
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
