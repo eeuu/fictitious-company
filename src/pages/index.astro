@@ -5,7 +5,33 @@ import Image from "astro/components/Image.astro";
 import "@/styles/globals.css";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/noto-sans-jp";
+import "@fontsource-variable/noto-serif-jp";
 ---
+
+<style is:global>
+	body {
+		position: relative;
+		&::before {
+			z-index: -10;
+			position: absolute;
+			inset: 0;
+			margin: auto;
+			display: block;
+			content: "";
+			width: 100%;
+			height: 100%;
+			filter: contrast(100%) brightness(100%);
+			background: rgb(2, 71, 76);
+			background: linear-gradient(
+					165deg,
+					rgba(1, 126, 97, 0.3) 0%,
+					rgba(244, 196, 0, 0.3) 40%,
+					rgba(246, 164, 0, 0.3) 100%
+				),
+				url("/noise.svg");
+		}
+	}
+</style>
 
 <html lang="jp">
 	<head>
@@ -16,55 +42,103 @@ import "@fontsource-variable/noto-sans-jp";
 		<meta name="robots" content="noindex" />
 		<title>あああ</title>
 	</head>
-	<body>
+	<body class:list={["min-h-lvh"]}>
 		<header class:list={["py-2", "px-4", "md:py-4", "md:px-8"]}>
-			<h1 class:list={["text-xl", "flex", "gap-2", "md:text-3xl"]}>
-				<Image src={logoImage} alt="" class:list={["w-8"]} />
-				あああ
-			</h1>
+			<div class:list={["md:max-w-5xl", "md:mx-auto"]}>
+				<h1 class:list={["text-xl", "flex", "gap-2", "md:text-3xl"]}>
+					<Image src={logoImage} alt="" class:list={["w-8"]} />
+					あああ
+				</h1>
+			</div>
 		</header>
-		<main>
-			<section
+		<main class:list={["pt-20"]}>
+			<h2
 				class:list={[
-					"h-[calc(100vh-50px)]",
-					"bg-gray-300",
-					"bg-no-repeat",
-					"bg-cover",
-					"bg-center",
-					"grid",
-					"place-content-center",
-					"md:h-[calc(100vh-200px)]",
+					"font-serif",
+					"px-4",
+					"text-3xl",
+					"leading-10",
+					"md:text-center",
 				]}
 			>
-				<h2 class:list={["font-jp"]}>キャッチコピー</h2>
-			</section>
+				日々の生活に彩りを、<br class:list={["md:hidden"]} />伝統行事を未来へ。
+			</h2>
 			<div
 				class:list={[
 					"flex",
 					"flex-col",
 					"gap-y-20",
-					"py-20",
-					"md:max-w-7xl",
+					"mt-20",
+					"pb-14",
+					"md:max-w-3xl",
 					"md:mx-auto",
-					"md:py-40",
-					"md:gap-y-40",
+					"md:pb-40",
+					"md:gap-y-28",
 				]}
 			>
 				<section class:list={["px-4", "md:px-6"]}>
-					<h2 class:list={["text-3xl", "md:text-5xl"]}>ビジョン</h2>
-					<p class:list={["mt-4", "md:text-xl"]}>かかげる理想</p>
+					<h2 class:list={["text-3xl", "font-serif", "md:text-5xl"]}>
+						ビジョン
+					</h2>
+					<p class:list={["mt-8", "leading-8", "text-justify"]}>
+						私たちは、四季折々の日本の年中行事を通じて、豊かな心の交流と地域文化の継承を目指します。伝統を大切にしながら、現代の暮らしに寄り添い、新しい形で年中行事を再発見し、次世代に繋げることを使命としています。
+					</p>
 				</section>
 				<section class:list={["px-4", "md:px-6"]}>
-					<h2 class:list={["text-3xl", "md:text-5xl"]}>ミッション</h2>
-					<p class:list={["mt-4", "md:text-xl"]}>背負った使命</p>
+					<h2 class:list={["text-3xl", "font-serif", "md:text-5xl"]}>
+						ミッション
+					</h2>
+					<ol
+						class:list={[
+							"list-decimal",
+							"mt-10",
+							"flex",
+							"flex-col",
+							"gap-y-10",
+							"pl-6",
+							"md:pl-8",
+						]}
+					>
+						<li>
+							<h3 class:list={["font-bold"]}>
+								伝統行事の魅力を広め、未来へ伝える。
+							</h3>
+							<p class:list={["mt-2", "leading-8", "text-justify"]}>
+								私たちは、古くから続く年中行事の本質を大切にしながら、現代的なアプローチを加えることで、年齢や世代を超えて楽しめる新しい体験を提供します。
+							</p>
+						</li>
+						<li>
+							<h3 class:list={["font-bold"]}>
+								地域コミュニティの活性化に貢献する。
+							</h3>
+							<p class:list={["mt-2", "leading-8", "text-justify"]}>
+								地域ごとに根付く年中行事の価値を見直し、その魅力を発信することで、地域の文化やつながりを深め、活気あるコミュニティづくりを支援します。
+							</p>
+						</li>
+						<li>
+							<h3 class:list={["font-bold"]}>持続可能な文化の創造。</h3>
+							<p class:list={["mt-2", "leading-8", "text-justify"]}>
+								私たちは年中行事を未来に残すため、環境に配慮したイベント運営やサステナブルな取り組みを積極的に取り入れ、未来世代にも続く文化の創造に努めます。
+							</p>
+						</li>
+					</ol>
 				</section>
 				<section class:list={["px-4", "md:px-6"]}>
-					<h2 class:list={["text-3xl", "md:text-5xl"]}>事業内容</h2>
-					<p class:list={["mt-4", "md:text-xl"]}>やっていること</p>
+					<h2 class:list={["text-3xl", "font-serif", "md:text-5xl"]}>
+						事業内容
+					</h2>
+					<div class:list={["mt-10"]}>
+						<h3 class:list={["font-bold"]}>
+							年中行事のデジタル化・普及支援事業
+						</h3>
+						<p class:list={["mt-2", "leading-8", "text-justify"]}>
+							年中行事に関する知識や文化をデジタルコンテンツとして発信。SNSや専用アプリ、オンラインプラットフォームを通じて、若い世代や海外にも日本の行事文化を広めます。また、地域イベントのオンライン化支援も行います。
+						</p>
+					</div>
 				</section>
 			</div>
 		</main>
-		<footer class:list={["py-2", "px-4", "bg-gray-100", "text-center"]}>
+		<footer class:list={["py-2", "px-4", "text-center"]}>
 			<p>© 2024 aaa</p>
 		</footer>
 	</body>
