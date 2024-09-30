@@ -13,8 +13,9 @@ export default {
 			},
 			colors: {},
 			fontFamily: {
-				inter: ['Inter Variable', ...defaultTheme.fontFamily.sans],
-				jp: ['Noto Sans JP Variable', ...defaultTheme.fontFamily.sans],
+				sans: ['Noto Sans JP Variable', "sans-serif", ...defaultTheme.fontFamily.sans],
+				serif: ['Noto Serif JP Variable', "serif"],
+				inter: ['Inter Variable', "sans-serif", ...defaultTheme.fontFamily.sans],
 			},
 		}
 	},
